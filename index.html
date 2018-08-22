@@ -1,0 +1,66 @@
+<html >
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+  <script src="js/scripts.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center ">
+  <h1>Laboratorio Remoto</h1>
+  <div class="h-50 embed-responsive embed-responsive-16by9" 
+  style="  background: url('img/cargando.gif')" id="embed">
+   <img class="embed-responsive-item" src="http://208.72.70.171/mjpg/1/video.mjpg?timestamp=1534383347801"  allowfullscreen id='frame'></iframe>
+   <!-- la ip es una transmisión publica cualquiera ,hay que cambiarla a la ip de la 
+    transmision en mjpg de nuestra camara
+    </video>-->
+  </div>
+</div>
+ 
+<div class="container h-25 ">
+  <div class="row  ">
+
+
+
+    <div class="col-sm-4 " id ="columnaScreen">
+      <h3>Screen de la transmisión</h3>
+        <canvas class="hidden  " width="0" height="0" id="canvas-foto" crossorigin>
+              Su navegador no soporta el elemento canvas,abra la pagina en un navegador compatible
+      </canvas>
+      <button type="button" class="btn btn-outline-primary "  id="botonScreen">Sacar foto</button>
+      <button type="button" class="btn btn-outline-primary" id ="botonDescargarScreen">Descargar foto</button>
+    </div>
+
+
+    <div class="col-sm-4" id="columnaConfig">
+      <h3>Configuración </h3>
+      <p>configurar frecuencia.</p>
+        <div class="input-group mb-3">
+        <input type="number" id="inputFrecuencia" class="form-control" placeholder="frecuencia (0-100 hertz)" label="frecuencia" aria-describedby="basic-addon2"
+        min="0" max="100">
+          <div class="input-group-append">
+            <span class="input-group-text" id="basic-addon2">hertz</span>
+         </div>
+        </div>
+       <button type="button" class="btn btn-outline-primary" id="botonFrecuencia">cambiar frecuencia</button>   
+      <p>Frecuencia actual :<div id="textoFrecuencia">Frecuencia no definida
+      </div></p>
+    </div>
+
+
+    <div class="col-sm-4 mh-100">
+      <h3>Historial de capturas</h3>        
+      <div class="mh-100" id="historialCapturas" style="overflow-y:scroll " ></div>
+    </div>
+  </div>
+
+
+</div>
+
+</body>
+</html>
